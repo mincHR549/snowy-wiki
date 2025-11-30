@@ -4,12 +4,25 @@ seo:
   description: SnowyMC 成立于 2022 年，专注于 Minecraft 服务器制作、插件开发与像素美术创作，致力于用技术与美学打造独特的游戏体验。
 ---
 
+<style>
+:root {
+  --hero-bg-start: #e8f0ff;
+  --hero-bg-end: #f3e8ff;
+}
+
+/* 深色模式下自动切换背景色 */
+.dark {
+  --hero-bg-start: #1e1b4b;
+  --hero-bg-end: #312e81;
+}
+</style>
+
 ::u-page-hero
 ---
 align: center
 style:
-  background: 'linear-gradient(135deg,#dbeafe,#f5f3ff)'
-  border: '1px solid #e5e7eb'
+  background: "linear-gradient(135deg, var(--hero-bg-start), var(--hero-bg-end))"
+  border: "1px solid var(--ui-border)"
   padding: 4rem 1rem
   radius: xl
   shadow: lg
