@@ -1,29 +1,25 @@
 ---
 seo:
-  title: Write beautiful docs with Markdown
-  description: Ship fast, flexible, and SEO-optimized documentation with beautiful
-    design out of the box. Docus brings together the best of the Nuxt ecosystem.
-    Powered by Nuxt UI.
+  title: SnowyMC 团队 Wiki
+  description: SnowyMC 专注于 Minecraft 服务器制作，提供从环境搭建到运维支持的一站式解决方案。
 ---
 
 ::u-page-hero
 #title
-Write beautiful docs with Markdown
+SnowyMC 团队 Wiki
 
 #description
-Ship fast, flexible, and SEO-optimized documentation with beautiful design out of the box.
-
-Docus brings the best of the Nuxt ecosystem into one CLI.
+这里是 SnowyMC 的知识库与团队介绍。我们专注于 Minecraft 服务器制作，涵盖环境搭建、插件配置、性能优化与运维支持，帮助玩家和服务器主轻松打造高质量的游戏社区。
 
 #links
   :::u-button
   ---
   color: neutral
   size: xl
-  to: /getting-started/installation
+  to: /getting-started/overview
   trailing-icon: i-lucide-arrow-right
   ---
-  Get started
+  快速开始
   :::
 
   :::u-button
@@ -31,93 +27,54 @@ Docus brings the best of the Nuxt ecosystem into one CLI.
   color: neutral
   icon: simple-icons-github
   size: xl
-  to: https://github.com/nuxt-content/docus
+  to: https://github.com/SnowyMCT
   variant: outline
   ---
-  Star on GitHub
+  在 GitHub 上关注我们
   :::
 ::
 
 ::u-page-section
 #title
-Shipped with many features
+核心特色服务
 
 #features
   :::u-page-feature
   ---
-  icon: i-simple-icons-nuxt
+  icon: i-simple-icons-minecraft
   target: _blank
-  to: https://nuxt.com
+  to: /server-setup
   ---
   #title
-  Built with [Nuxt 4]{.text-primary}
-  
+  服务器环境搭建
+  　
   #description
-  Optimized by the most famous Vue framework. Docus gives you everything you need to build fast, performant, and SEO-friendly websites.
+  从零开始搭建 Minecraft 服务器，支持多版本与跨平台部署，提供详细文档与自动化脚本。
   :::
 
   :::u-page-feature
   ---
-  icon: i-simple-icons-nuxt
+  icon: i-simple-icons-minecraft
   target: _blank
-  to: https://ui.nuxt.com/
+  to: /optimization
   ---
   #title
-  Powered by [Nuxt UI]{.text-primary}
-  
+  性能优化与安全
+  　
   #description
-  Beautiful out of the box, minimal by design but highly customizable. Docus leverages Nuxt UI to give you the best docs writing experience with zero boilerplate, just focus on your content.
+  提供 TPS 优化、内存管理、网络加速与安全防护方案，确保服务器稳定高效运行。
   :::
 
   :::u-page-feature
   ---
-  icon: i-simple-icons-nuxt
+  icon: i-simple-icons-minecraft
   target: _blank
-  to: https://content.nuxt.com
+  to: /maintenance
   ---
   #title
-  Enhanced Markdown syntax by [Nuxt Content]{.text-primary}
-  
+  运维支持与文档
+  　
   #description
-  The only thing you need to take care about is writing your content. Write your pages in Markdown and extend with MDC syntax to embed Nuxt UI or custom Vue components. Structure, routing, and rendering are handled for you.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-nuxt
-  target: _blank
-  to: https://nuxt.com/docs/guide/directory-structure/app-config
-  ---
-  #title
-  Customize with [Nuxt App Config]{.text-primary}
-  
-  #description
-  Update colors, social links, header logos and component styles globally using the `app.config.ts`, no direct code modifications required.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-nuxt
-  target: _blank
-  to: https://content.nuxt.com/studio
-  ---
-  #title
-  Collaborate on [Nuxt Studio]{.text-primary}
-  
-  #description
-  Write and manage your content visually, with zero Markdown knowledge required. Let your non technical colleagues collaborate on the documentation and integrate Vue components without code skills.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-nuxt
-  target: _blank
-  to: https://ui.nuxt.com/components/content-search
-  ---
-  #title
-  Built-in navigation and [full-text search]{.text-primary}
-  
-  #description
-  Only focus on ordering your content, Docus handles the search modal and auto-generates the side navigation for you.
+  系统化整理运维流程、报错排查与恢复方案，帮助团队快速解决问题并提升效率。
   :::
 ::
