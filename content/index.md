@@ -6,7 +6,7 @@ seo:
 
 ::u-page-hero
 #title
-SnowyMC 团队 Wiki
+Snowy Wiki
 
 #description
 这里是 SnowyMC 的知识库与团队介绍。我们成立于 2022 年，专注于 Minecraft 服务器制作、插件开发与像素美术创作，致力于用技术与美学打造高质量的游戏社区与独特的玩法体验。
@@ -16,7 +16,7 @@ SnowyMC 团队 Wiki
   ---
   color: neutral
   size: xl
-  to: /getting-started/overview
+  to: /getting-started/intro
   trailing-icon: i-lucide-arrow-right
   ---
   快速开始
