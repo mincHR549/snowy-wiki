@@ -1,7 +1,7 @@
 ---
 seo:
-  title: SnowyMC 团队 Wiki
-  description: SnowyMC 专注于 Minecraft 服务器制作，提供从环境搭建到运维支持的一站式解决方案。
+  title: Snowy Wiki
+  description: SnowyMC 成立于 2022 年，专注于 Minecraft 服务器制作、插件开发与像素美术创作，致力于用技术与美学打造独特的游戏体验。
 ---
 
 ::u-page-hero
@@ -9,7 +9,7 @@ seo:
 SnowyMC 团队 Wiki
 
 #description
-这里是 SnowyMC 的知识库与团队介绍。我们专注于 Minecraft 服务器制作，涵盖环境搭建、插件配置、性能优化与运维支持，帮助玩家和服务器主轻松打造高质量的游戏社区。
+这里是 SnowyMC 的知识库与团队介绍。我们成立于 2022 年，专注于 Minecraft 服务器制作、插件开发与像素美术创作，致力于用技术与美学打造高质量的游戏社区与独特的玩法体验。
 
 #links
   :::u-button
@@ -49,32 +49,44 @@ SnowyMC 团队 Wiki
   服务器环境搭建
   　
   #description
-  从零开始搭建 Minecraft 服务器，支持多版本与跨平台部署，提供详细文档与自动化脚本。
+  从零开始搭建 Minecraft 服务器，支持多版本与跨平台部署，提供详细文档与自动化脚本，帮助玩家快速拥有属于自己的服务器。
   :::
 
   :::u-page-feature
   ---
   icon: i-simple-icons-minecraft
   target: _blank
-  to: /optimization
+  to: /plugins
   ---
   #title
-  性能优化与安全
+  插件开发与定制
   　
   #description
-  提供 TPS 优化、内存管理、网络加速与安全防护方案，确保服务器稳定高效运行。
+  提供功能丰富的插件开发与配置服务，支持玩法扩展与个性化定制，打造独特的服务器体验。
   :::
 
   :::u-page-feature
   ---
   icon: i-simple-icons-minecraft
   target: _blank
-  to: /maintenance
+  to: /design
   ---
   #title
-  运维支持与文档
+  像素美术与视觉设计
   　
   #description
-  系统化整理运维流程、报错排查与恢复方案，帮助团队快速解决问题并提升效率。
+  专注于 Minecraft 像素美术创作，包括贴图修改、Logo 与长图设计，为服务器塑造独特的品牌形象。
   :::
 ::
+
+::u-page-section
+#title
+团队愿景与发展
+
+SnowyMC 成立于 **2022 年 6 月**，最初由三位成员组成。  
+我们经历了服务器设备问题带来的挑战，也在不断探索新的方向。2025 年，我们推出了新项目 **NewWorld - Online**，继续坚持“技术与美学的交汇”的理念。  
+
+我们的愿景是：  
+- 打造高质量、高性价比的 Minecraft 服务器生态  
+- 提升团队品牌影响力与用户满意度  
+- 让更多玩家与服务器主享受创造与分享的乐趣

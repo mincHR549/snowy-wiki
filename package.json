@@ -1,5 +1,5 @@
 {
-  "name": "SnowyMC-Wiki",
+  "name": "Snowy-Wiki",
   "scripts": {
     "dev": "nuxt dev --extends docus",
     "build": "nuxt build --extends docus"
