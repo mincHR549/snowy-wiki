@@ -13,19 +13,14 @@ seo:
 /* 深色模式下自动切换背景色 */
 .dark {
   --hero-bg-start: #1e1b4b;
-  --hero-bg-end: #312e81;
+  --hero-bg-end: #0f0e35ff;
 }
 </style>
 
 ::u-page-hero
 ---
 align: center
-style:
-  background: "linear-gradient(135deg, var(--hero-bg-start), var(--hero-bg-end))"
-  border: "1px solid var(--ui-border)"
-  padding: 4rem 1rem
-  radius: xl
-  shadow: lg
+class: "bg-gray-900 dark:bg-black py-16 px-4 rounded-xl shadow-lg"
 ---
 
 #title
