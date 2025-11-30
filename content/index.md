@@ -34,7 +34,7 @@ SnowyMC 的官方知识库与团队主页。自 2022 年起，我们专注 Minec
   ---
   color: primary
   size: xl
-  to: /getting-started/intro
+  to: /main/intro
   trailing-icon: i-lucide-arrow-right
   ---
   快速开始
