@@ -1,10 +1,3 @@
----
-title: MMOItem 物品属性
-description: MMOItem 物品属性
-navigation:
-  icon: i-icon-mdi-book-open-outline
----
-
 # 物品属性
 
 编辑菜单 (_/mi edit_) 可以让你知道可以为物品添加哪些属性以及如何配置它们。虽然大多数都很直观，但以下是一些关于最复杂物品选项的说明。这个列表并不包含MMOItems中的所有物品属性或选项，所以请务必阅读整个Wiki，它包含了关于其他物品选项的信息。如果你不想使用编辑菜单，物品示例可以帮助你手动创建物品。
@@ -364,4 +357,4 @@ FIRE_GREATLANCE:
 
 您也可以使用服务器资源包中的声音。您可以在网上找到 **默认** 声音列表，例如在 [pastebin.com](https://pastebin.com/gLMhUyis) 上，甚至使用 `/sound` 自动命令补全器。
 
-—— 选自 https://mmoitems.magicmc.top/item-creation/item-stats-and-options.html
+![image](/10.png)
