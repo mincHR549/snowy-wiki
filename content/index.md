@@ -6,21 +6,49 @@ seo:
 
 <style>
 :root {
-  --hero-bg-start: #e8f0ff;
-  --hero-bg-end: #f3e8ff;
+  /* 亮色模式 */
+  --hero-bg-start: #eef4ff;
+  --hero-bg-mid: #f6f0ff;
+  --hero-bg-end: #ffffff;
+
+  --hero-glow: radial-gradient(
+    600px circle at 50% 20%,
+    rgba(120, 140, 255, 0.25),
+    transparent 60%
+  );
 }
 
-/* 深色模式下自动切换背景色 */
+/* 深色模式 */
 .dark {
-  --hero-bg-start: #1e1b4b;
-  --hero-bg-end: #0f0e35ff;
+  --hero-bg-start: #0b1020;
+  --hero-bg-mid: #11142a;
+  --hero-bg-end: #060814;
+
+  --hero-glow: radial-gradient(
+    500px circle at 50% 15%,
+    rgba(120, 140, 255, 0.18),
+    transparent 65%
+  );
+}
+
+/* Hero 背景统一样式 */
+.hero-bg {
+  background:
+    var(--hero-glow),
+    linear-gradient(
+      135deg,
+      var(--hero-bg-start),
+      var(--hero-bg-mid),
+      var(--hero-bg-end)
+    );
 }
 </style>
+
 
 ::u-page-hero
 ---
 align: center
-class: "bg-gray-900 dark:bg-black py-16 px-4 rounded-xl shadow-lg"
+class: "hero-bg py-20 px-6 rounded-2xl shadow-xl ring-1 ring-black/5 dark:ring-white/10"
 ---
 
 #title
