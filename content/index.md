@@ -5,44 +5,59 @@ seo:
 ---
 
 <style>
-:root {
-  /* 亮色模式 */
-  --hero-bg-start: #eef4ff;
-  --hero-bg-mid: #f6f0ff;
-  --hero-bg-end: #ffffff;
+/* ===== 卡片基础 ===== */
+.notion-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.04),
+    0 8px 24px rgba(0,0,0,.04);
+  transition: all .25s ease;
+}
 
-  --hero-glow: radial-gradient(
-    600px circle at 50% 20%,
-    rgba(120, 140, 255, 0.25),
-    transparent 60%
-  );
+/* Hover：轻微抬升 */
+.notion-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 20px rgba(0,0,0,.08),
+    0 16px 40px rgba(0,0,0,.06);
 }
 
 /* 深色模式 */
-.dark {
-  --hero-bg-start: #0b1020;
-  --hero-bg-mid: #11142a;
-  --hero-bg-end: #060814;
-
-  --hero-glow: radial-gradient(
-    500px circle at 50% 15%,
-    rgba(120, 140, 255, 0.18),
-    transparent 65%
-  );
+.dark .notion-card {
+  background: rgba(20, 22, 40, 0.65);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.4),
+    0 8px 30px rgba(0,0,0,.35);
 }
 
-/* Hero 背景统一样式 */
+
 .hero-bg {
+  position: relative;
+  overflow: hidden;
   background:
-    var(--hero-glow),
+    radial-gradient(600px circle at 30% 20%, rgba(120,140,255,.18), transparent 60%),
+    radial-gradient(500px circle at 70% 40%, rgba(180,120,255,.12), transparent 60%),
     linear-gradient(
-      135deg,
+      120deg,
       var(--hero-bg-start),
       var(--hero-bg-mid),
       var(--hero-bg-end)
     );
+  background-size: 200% 200%;
+  animation: heroFlow 40s ease-in-out infinite;
+}
+
+@keyframes heroFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 </style>
+
 
 
 ::u-page-hero
@@ -50,6 +65,7 @@ seo:
 align: center
 class: "hero-bg py-20 px-6 rounded-2xl shadow-xl ring-1 ring-black/5 dark:ring-white/10"
 ---
+
 
 #title
 Snowy Wiki
@@ -92,6 +108,7 @@ SnowyMC 的官方知识库与团队主页。自 2022 年起，我们专注 Minec
 #features
   :::u-page-feature
   ---
+  class: "notion-card p-6"
   icon: i-simple-icons-minecraft
   target: _blank
   to: /server-setup
@@ -104,6 +121,7 @@ SnowyMC 的官方知识库与团队主页。自 2022 年起，我们专注 Minec
 
   :::u-page-feature
   ---
+  class: "notion-card p-6"
   icon: i-lucide-settings
   target: _blank
   to: /plugins
@@ -117,6 +135,7 @@ SnowyMC 的官方知识库与团队主页。自 2022 年起，我们专注 Minec
   :::u-page-feature
   ---
   icon: i-lucide-palette
+  class: "notion-card p-6"
   target: _blank
   to: /design
   ---
@@ -138,6 +157,7 @@ SnowyMC 的官方知识库与团队主页。自 2022 年起，我们专注 Minec
   :::u-card
   ---
   icon: i-lucide-sparkles
+  class: "notion-card p-6"
   ---
   #title
   经验丰富的技术团队
@@ -147,6 +167,7 @@ SnowyMC 的官方知识库与团队主页。自 2022 年起，我们专注 Minec
   :::u-card
   ---
   icon: i-lucide-cpu
+  class: "notion-card p-6"
   ---
   #title
   自动化与高标准文档
@@ -156,6 +177,7 @@ SnowyMC 的官方知识库与团队主页。自 2022 年起，我们专注 Minec
   :::u-card
   ---
   icon: i-lucide-users
+  class: "notion-card p-6"
   ---
   #title
   社区驱动与持续更新
