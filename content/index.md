@@ -5,6 +5,19 @@ seo:
 ---
 
 <style>
+/* ===== Hero 背景变量 ===== */
+:root {
+  --hero-bg-start: #eef4ff;
+  --hero-bg-mid: #f6f0ff;
+  --hero-bg-end: #ffffff;
+}
+
+.dark {
+  --hero-bg-start: #0b1020;
+  --hero-bg-mid: #11142a;
+  --hero-bg-end: #060814;
+}
+
 /* ===== 卡片基础 ===== */
 .notion-card {
   background: rgba(255, 255, 255, 0.75);
@@ -17,7 +30,6 @@ seo:
   transition: all .25s ease;
 }
 
-/* Hover：轻微抬升 */
 .notion-card:hover {
   transform: translateY(-3px);
   box-shadow:
@@ -25,7 +37,6 @@ seo:
     0 16px 40px rgba(0,0,0,.06);
 }
 
-/* 深色模式 */
 .dark .notion-card {
   background: rgba(20, 22, 40, 0.65);
   border: 1px solid rgba(255,255,255,.08);
@@ -34,7 +45,7 @@ seo:
     0 8px 30px rgba(0,0,0,.35);
 }
 
-
+/* ===== Hero 背景 ===== */
 .hero-bg {
   position: relative;
   overflow: hidden;
@@ -57,8 +68,6 @@ seo:
   100% { background-position: 0% 50%; }
 }
 </style>
-
-
 
 ::u-page-hero
 ---
