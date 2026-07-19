@@ -1,0 +1,247 @@
+---
+title: eco 生态替代 MMOCore 方案
+description: 使用 Auxilor/exanthiax 维护的 eco 插件矩阵，配合 Fabled 补齐主动技能释放，完整替代 MMOCore 的职业、技能、专精、装备属性体系。
+navigation:
+  icon: i-lucide-swords
+seo:
+  title: eco 生态替代 MMOCore 完整方案
+  description: SnowyMC 服务端从 MMOCore 迁移至 eco 生态 + Fabled 的插件清单、依赖关系与配置文档。
+---
+
+# eco 生态替代 MMOCore 方案
+
+::alert{icon="i-lucide-info"}
+本方案面向已使用 **Typewriter** 作为任务/剧情/NPC 系统的服务端。物品层与 NPC/Boss 层建议保留 **MMOItems + MythicLib + MythicMobs**，因为它们目前是唯一有官方 Typewriter Extension 的 RPG 插件，可以保留剧情联动能力。职业与技能层则完全替换为 eco 生态 + Fabled。
+::
+
+---
+
+## 方案总览
+
+::timeline
+  :::timeline-item
+  #title
+  底层依赖
+  #description
+  安装 eco 核心库，作为 EcoSkills / EcoJobs / EcoItems / EcoEnchants / EcoArmor 等插件的运行前提。
+  :::
+  :::timeline-item
+  #title
+  职业与主动技能层
+  #description
+  安装 Fabled + Codex，负责职业系统、主动技能释放、技能树与属性成长（力量/敏捷/智力/法力值等）。
+  :::
+  :::timeline-item
+  #title
+  专精 / 生活技能层
+  #description
+  安装 EcoJobs（打工型职业/专精）或 AuraSkills（被动技能升级），二选一，不建议同时装。
+  :::
+  :::timeline-item
+  #title
+  装备属性层
+  #description
+  安装 EcoItems + EcoEnchants + EcoArmor，或者保留 MMOItems + MythicLib，二选一。
+  :::
+  :::timeline-item
+  #title
+  社交与联动层
+  #description
+  安装 Guilds、PartyAndFriends 处理队伍/公会；PlaceholderAPI 负责把各插件数值互通并暴露给 Typewriter。
+  :::
+::
+
+---
+
+## 插件清单
+
+### 1. 底层依赖（必装）
+
+::u-page-section
+#title
+核心库
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-package
+  ---
+  #title
+  eco
+  #description
+  Auxilor/exanthiax 维护的 Spigot 开发框架，是所有 eco 系插件的硬依赖。官方标注支持 1.21.8 及以上版本。必须单独安装在服务器 plugins 目录下。
+  :::
+  :::u-page-feature
+  ---
+  icon: i-lucide-book-open
+  ---
+  #title
+  PlaceholderAPI
+  #description
+  用于把 Fabled、EcoSkills、EcoJobs 等插件的等级/技能/职业数值暴露成占位符，供 Typewriter 剧情条件判断使用。
+  :::
+::
+
+### 2. 职业与主动技能层
+
+::u-page-section
+#title
+职业 / 技能释放 / 技能树
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-swords
+  ---
+  #title
+  Fabled
+  #description
+  原 SkillAPI / ProSkillAPI，MageMonkey.studio 维护。提供职业系统、主动技能释放（冷却、法力消耗、粒子特效）、技能树、属性成长。自带浏览器可视化编辑器，支持表单模式和 Blockly 拖拽模式。
+  :::
+  :::u-page-feature
+  ---
+  icon: i-lucide-puzzle
+  ---
+  #title
+  Codex
+  #description
+  Fabled 的必装伴生插件，两者需同时放入 plugins 文件夹。
+  :::
+::
+
+::alert{icon="i-lucide-triangle-alert"}
+eco 生态本身**没有**"职业+主动施放技能"模块，EcoSkills 是被动技能升级（自动触发效果），不是按键放技能。这一层必须靠 Fabled 补齐。
+::
+
+### 3. 专精 / 生活技能层（二选一）
+
+| 插件 | 定位 | 适合场景 |
+|---|---|---|
+| **EcoJobs** | 打工赚钱型职业系统，可配置无限职业、等级、效果、条件 | 想要经济向的"打工"专精体验 |
+| **AuraSkills**（非 eco 系） | 被动技能升级（挖矿/伐木/钓鱼/种田等） | 想要类似 mcMMO 的被动成长体验 |
+
+### 4. 装备属性层（二选一）
+
+::u-page-section
+#title
+方案 A：eco 系装备矩阵
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-sword
+  ---
+  #title
+  EcoItems
+  #description
+  自定义武器/工具/装备/合成表，由 LibreForge 效果系统驱动，支持自升级、损耗、自附魔的物品。
+  :::
+  :::u-page-feature
+  ---
+  icon: i-lucide-sparkle
+  ---
+  #title
+  EcoEnchants
+  #description
+  220+ 自定义附魔，与 Essentials、CMI 等插件兼容。
+  :::
+  :::u-page-feature
+  ---
+  icon: i-lucide-shield
+  ---
+  #title
+  EcoArmor
+  #description
+  自定义套装系统，可配置套装特效与升级路径。
+  :::
+::
+
+::u-page-section
+#title
+方案 B：保留 MMOItems（推荐，兼顾 Typewriter 联动）
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-gem
+  ---
+  #title
+  MMOItems + MythicLib
+  #description
+  不装 MMOCore 的情况下，MMOItems 依然可以独立运行，只依赖 MythicLib。保留它可以让 Typewriter 的官方 MMOItems Extension（合成站、宝石镶嵌、物品消耗事件）继续生效。
+  :::
+::
+
+### 5. Boss / 怪物技能层
+
+::u-page-section
+#title
+NPC 与 Boss 演出
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-skull
+  ---
+  #title
+  MythicMobs
+  #description
+  给自定义怪物/Boss 挂技能，与 Typewriter 有官方 Extension（MythicMob NPC），支持相机聚焦、动画、任务目标绑定。
+  :::
+  :::u-page-feature
+  ---
+  icon: i-lucide-flame
+  ---
+  #title
+  MythicCrucible（可选）
+  #description
+  MythicMobs 的自定义物品扩展，如果不想用 EcoItems/MMOItems 做特殊 Boss 掉落物，可以用它补充。
+  :::
+::
+
+### 6. 社交层
+
+| 插件 | 功能 |
+|---|---|
+| **Guilds** | 公会系统 |
+| **PartyAndFriends**（或 Parties） | 队伍系统 |
+
+---
+
+## 完整安装顺序
+
+::alert{icon="i-lucide-list-ordered"}
+1. `eco`（核心库）
+2. `PlaceholderAPI`
+3. `Fabled` + `Codex`
+4. `EcoJobs`（或 `AuraSkills`）
+5. `EcoItems` + `EcoEnchants` + `EcoArmor`（或保留 `MythicLib` + `MMOItems`）
+6. `MythicMobs`（+ 可选 `MythicCrucible`）
+7. `Guilds`、`PartyAndFriends`
+8. `Typewriter` 及其对应 Extension（MMOItems Integration、MythicMob NPC）
+::
+
+---
+
+## 与 Typewriter 的联动现状
+
+::alert{icon="i-lucide-info"}
+Fabled、EcoJobs、EcoSkills、AuraSkills **均未查到官方 Typewriter Extension**。目前只有 **MMOItems** 和 **MythicMobs** 有官方扩展。
+
+这意味着：
+- 物品消耗、合成、宝石镶嵌等事件 → 保留 MMOItems 即可直接在 Typewriter 里触发剧情
+- NPC/Boss 演出 → MythicMobs 直接可用
+- 职业等级/技能数值 → 只能通过 **PlaceholderAPI** 做单向条件判断（例如"等级 ≥ 10 才能触发剧情分支"），双向联动（剧情自动升级职业、剧情触发技能释放）需要自行编写一个小型桥接插件，监听 Fabled 的 `PlayerLevelUpEvent` / `PlayerClassChangeEvent` 等事件后调用 Typewriter 的 `/typewriter trigger` 接口。
+::
+
+---
+
+## 取舍总结
+
+| 维度 | eco 生态 + Fabled | 原 MMOCore |
+|---|---|---|
+| 完成度 | 高，各模块开箱即用 | 高，单插件全包 |
+| 版本追更 | 积极，官方支持 1.21.8+ | 稳定支持仅到 1.21.x，新版本需等 dev build |
+| Typewriter 联动 | 职业/技能层需自建桥接 | 有官方 Typewriter Extension，联动最完整 |
+| 维护成本 | 需要拼装多个插件，配置分散 | 单一配置体系，联动内置 |
+| 灵活度 | 每个模块可单独替换/升级 | 模块耦合度较高 |
